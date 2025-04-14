@@ -1,32 +1,32 @@
-// Get the container element
-const container = document.getElementById('container');
-
-// Create a <p> element with red text
-const redParagraph = document.createElement('p');
-redParagraph.textContent = "Hey I’m red!";
-redParagraph.style.color = 'red';
-container.appendChild(redParagraph);
-
-// Create an <h3> element with blue text
-const blueHeading = document.createElement('h3');
-blueHeading.textContent = "I’m a blue h3!";
-blueHeading.style.color = 'blue';
-container.appendChild(blueHeading);
-
-// Create a <div> with a black border and pink background
-const pinkDiv = document.createElement('div');
-pinkDiv.style.border = '1px solid black';
-pinkDiv.style.backgroundColor = 'pink';
-
-// Create an <h1> inside the <div>
-const divHeading = document.createElement('h1');
-divHeading.textContent = "I’m in a div";
-pinkDiv.appendChild(divHeading);
-
-// Create a <p> inside the <div>
-const divParagraph = document.createElement('p');
-divParagraph.textContent = "ME TOO!";
-pinkDiv.appendChild(divParagraph);
-
-// Append the <div> to the container
-container.appendChild(pinkDiv);
+html
+<! DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rock Paper Scissors Game</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+text-align: center;
+margin-top: 50px;
+button {
+padding: 10px 20px;
+font-size: 16px;
+margin: 5px;
+cursor: pointer;
+</style>
+</head>
+<body>
+<h1>Rock, Paper, Scissors Game</h1>
+<div>
+<button onclick="playGame('rock' )">Rock</button>
+<button onclick="playGame('paper' )">Paper</button>
+<button onclick="playGame('scissors')">Scissors</button>
+</div>
+<h2 id="result"></h2>
+<script>
+function playGame(playerChoice) {
+const choices = ['rock', 'paper', 'scissors'];
+const computerChoice = choices[Math.floor(Math.random() * 3)];
+let result = '';
